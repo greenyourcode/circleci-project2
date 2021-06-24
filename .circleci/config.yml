@@ -6,11 +6,5 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
-      - restore_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
-      - save_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - "node_modules"
      
